@@ -1,4 +1,5 @@
 import 'package:ecommerce_kit/presentation/ui/screens/Main_Bottom_Nav_Screen.dart';
+import 'package:ecommerce_kit/presentation/ui/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void moveToNextScreen() async {
     await Future.delayed(const Duration(seconds: 1),);
-      Get.offAll(const MainBottomNavScreen());
+      Get.offAll(const SignUpScreen());
   }
 
 

@@ -15,22 +15,22 @@ class AppThemeData {
         ),
         border: const OutlineInputBorder(
           borderSide: BorderSide(
-            //color: AppColors.primaryColor,
+            color: Colors.grey
           ),
         ),
         focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: Colors.redAccent
+            color: Colors.grey
           ),
         ),
         enabledBorder: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: Colors.redAccent
+            color: Colors.grey
           ),
         ),
         errorBorder: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: Colors.redAccent,
+            color: Colors.red,
           ),
         ),
       ),
@@ -48,7 +48,7 @@ class AppThemeData {
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          backgroundColor:Colors.pinkAccent,
+          backgroundColor:Colors.redAccent,
           padding: const EdgeInsets.symmetric(vertical: 14),
           textStyle: const TextStyle(
             fontSize: 14,
