@@ -65,7 +65,8 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  Get.offAll(()=>HomeScreen());
+                  //Get.offAll(()=>HomeScreen());
+                  Get.offAll(HomeScreen());
                 },
                 child: const Text(
                   'Resend Code',

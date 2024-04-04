@@ -1,3 +1,4 @@
+import 'package:ecommerce_kit/presentation/ui/screens/Main_Bottom_Nav_Screen.dart';
 import 'package:ecommerce_kit/presentation/ui/screens/splash_screen.dart';
 import 'package:ecommerce_kit/presentation/utility/app_theme_data.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,7 @@ class EcommerceAppUI extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppThemeData.lightThemeData,
-      home: SplashScreen(),
+      home: MainBottomNavScreen(),
     );
   }
 }

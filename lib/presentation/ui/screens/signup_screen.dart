@@ -27,7 +27,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               style: Theme.of(context)
                   .textTheme
                   .titleLarge
-                  ?.copyWith(fontSize: 28, color: Colors.grey.shade700),
+                  ?.copyWith(fontSize: 28, color: Colors.black),
             ),
             SizedBox(
               height: 20,
@@ -58,6 +58,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       height: 20,
                     ),
                     TextField(
+                      obscureText: true,
+                      obscuringCharacter: "*",
                       decoration: InputDecoration(
                           label: Icon(Icons.password), hintText: "Password"),
                     ),
@@ -97,7 +99,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     onPressed: () {
                       Get.to(() => LoginScreen());
                     },
-                    child: Text("Login"))
+                    child: Text("Login",style: TextStyle(fontWeight: FontWeight.w800),))
               ],
             )
           ],

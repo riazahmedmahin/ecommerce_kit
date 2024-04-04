@@ -1,7 +1,9 @@
+import 'package:ecommerce_kit/presentation/ui/screens/signup_screen.dart';
 import 'package:ecommerce_kit/presentation/widgets/banner_carousel.dart';
 import 'package:ecommerce_kit/presentation/widgets/categoryitem.dart';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../widgets/product_card_item.dart';
 
@@ -20,34 +22,36 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: Appbar(),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              'Category',
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge
-                  ?.copyWith(fontSize: 28, color: Colors.grey.shade700),
-            ),
-            calegoryItem(),
-            Text(
-              'Latest',
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge
-                  ?.copyWith(fontSize: 28, color: Colors.grey.shade700),
-            ),SizedBox(height: 20,),
-            BannerCarousel(),
-            SizedBox(height: 20,),
-            popular_product(),
-
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                'Category',
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge
+                    ?.copyWith(fontSize: 28, color: Colors.grey.shade700),
+              ),
+              calegoryItem(),
+              Text(
+                'Latest',
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge
+                    ?.copyWith(fontSize: 28, color: Colors.grey.shade700),
+              ),SizedBox(height: 20,),
+              BannerCarousel(),
+              SizedBox(height: 20,),
+              popular_product(),
+        
+            ],
+          ),
         ),
       ),
     );
@@ -70,10 +74,10 @@ class _HomeScreenState extends State<HomeScreen> {
         SizedBox(
           width: 20,
         ),
-        Icon(Icons.notifications),
-        SizedBox(
-          width: 20,
-        ),
+       IconButton(onPressed: (){
+         Get.to(()=>SignUpScreen());
+
+       }, icon: Icon(Icons.notifications))
       ],
     );
   }
@@ -87,8 +91,6 @@ class popular_product extends StatelessWidget {
   final  List _product =[
     'https://storage.apex4u.com/fa8e0210-6afc-4c57-a936-1ca299b83bec.jpg',
     'https://media.e-valy.com/cms/products/images/2a666828-c35e-435f-b1bb-10fd0a75c238',
-
-    //'data:image/jpeg;base64,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PxIm5+FWK29GnQTOmmioueeFGMn3POZkRJotcxESoREQEREDUPT7q1ZgtazGQg09lkABQWbCbc9THmcb+WMnUVamyMUdSrKcMrDBB9xPXUr/AEh6H2d7vXogv5Op0uP4hz+ByJnTW9+vMirnaZSU1UZwJtyr1NUtWUu6gX0dFY/UFfymfw/qltEYNWq1awH2NqaH46e9/UI0IbqU4EdVW/ddiOyok+e+ajD5hVz7MJYOmfVrQvGatRxRrnc7dxz6sBurftD5gy821ulNFp01CKoCqqgBQByAA5Cd8uk288V+i3E7Rif0eq+BjUmmupwAFYAYOQBtkA+Uqlzwq4UsWt6yDJPepuuN/hgT1jESSLcrfXkZKVRWBCOCCCCFOQRyknXoX1ywL07iqd8YpucajlsBVwMmep4jSbeYrfoRxCp4bKr8WUJ/8yJL2vVZxN+dOnT/AH6i/wCjVPQ0Ro20rZdTdc47W6pqPMIrOfqdP5Sw2PU/ZJvUqVqh9NSov9K5/GbIiNG1asegnDqOClpTJHnUBqH6uTLDRoqg0oqqPRQAPoJ2xKhERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQERED/2Q==',
     'https://static.vecteezy.com/system/resources/thumbnails/028/252/048/small_2x/men-s-t-shirt-realistic-mockup-in-different-colors-ai-generated-photo.jpg',
     'https://media.e-valy.com/cms/products/images/27eba057-798a-4556-841a-57aaa810bf73',
   ];

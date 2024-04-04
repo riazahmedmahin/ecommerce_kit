@@ -25,7 +25,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
       body: _Pages[_seletedindex],
 
       bottomNavigationBar:  Container(
-        height: 160,
+        height: 158,
         color: Colors.white,
         child: DotNavigationBar(
           currentIndex: _seletedindex,
@@ -53,17 +53,19 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
               icon: Icon(Icons.search),
             ),
 
+            /// Profile
+            DotNavigationBarItem(
+              icon: Icon(Icons.person),
+              //selectedColor: Colors.teal,
+            ),
+
             /// Search
             DotNavigationBarItem(
               icon: Icon(Icons.shopping_cart_sharp),
               //selectedColor: Colors.orange,
             ),
 
-            /// Profile
-            DotNavigationBarItem(
-              icon: Icon(Icons.person),
-              //selectedColor: Colors.teal,
-            ),
+
 
             DotNavigationBarItem(
               icon: Icon(Icons.menu),
